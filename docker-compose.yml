@@ -11,7 +11,7 @@ services:
       context: ./nginx-server
     ports:
       - "80:80"
-  nexuss:
+  nexus:
     image: "sonatype/nexus3:latest"
     container_name: "local-docker-repo"
     ports: 
@@ -20,5 +20,12 @@ services:
     restart: always
     volumes:
       - ./nexus-docker-repo/local-nexus-data:/nexus-data
+  jenkins:
+    image: "jenkins/jenkins" 
+    container_name: "jenkins-server"
+    ports: 
+      - "8080:8080"
+    volumes:
+      - "./jenkins-server/jenkins_home:/var/jenkins_home"
+        
 
-    

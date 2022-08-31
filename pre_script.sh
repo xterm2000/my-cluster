@@ -4,3 +4,6 @@
 mkdir ./nexus-docker-repo/local-nexus-data
 sudo chown -R 200 ./nexus-docker-repo/local-nexus-data
 
+mkdir jenkins-server/jenkins-home
+
+
