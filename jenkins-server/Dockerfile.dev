@@ -1,0 +1,3 @@
+FROM jenkins
+COPY babajan
+RUN  ['asda']

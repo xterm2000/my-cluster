@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  router:
+    ####################
+    image: "nginx:latest"
+    container_name: nginx-router
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx-server
+    ports:
+      - "80:80"
+  nexuss:
+    image: "sonatype/nexus3:latest"
+    container_name: "local-docker-repo"
+    ports: 
+      - "8081:8081"
+      - "8082:8082"
+    restart: always
+    volumes:
+      - ./nexus-docker-repo/local-nexus-data:/nexus-data
+
+    
